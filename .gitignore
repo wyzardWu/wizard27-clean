@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+*.egg-info/
+runs/
+checkpoints/
+data/
+*.safetensors
+*.pt
+*.mp4
+*.mkv
+*.npz
+*.log

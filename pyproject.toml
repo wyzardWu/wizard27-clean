@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "wizard27"
+version = "0.1.0"
+description = "Real-time controllable game-world video model on Wan2.2-TI2V-5B: bidirectional teacher, causal student, consistency distillation and DMD"
+requires-python = ">=3.10"
+readme = "README.md"
+
+[tool.setuptools.packages.find]
+include = ["wizard*"]

@@ -1,0 +1,26 @@
+# Accelerate + FSDP config for the distillation stages (several 5B models per rank).
+# Differs from fsdp.yaml: sync_module_states=false and cpu_ram_efficient_loading=false. Every rank loads the same
+# checkpoints itself, so rank 0 does not have to materialise all the full models for a broadcast (that peak OOMs).
+compute_environment: LOCAL_MACHINE
+distributed_type: FSDP
+mixed_precision: bf16
+use_cpu: false
+machine_rank: 0
+num_machines: 1
+num_processes: 8                      # <-- set to your GPU count
+rdzv_backend: static
+same_network: true
+fsdp_config:
+  fsdp_sharding_strategy: FULL_SHARD
+  fsdp_auto_wrap_policy: TRANSFORMER_BASED_WRAP
+  fsdp_transformer_layer_cls_to_wrap: DiTBlock
+  fsdp_backward_prefetch: BACKWARD_PRE
+  fsdp_state_dict_type: SHARDED_STATE_DICT
+  fsdp_offload_params: false
+  fsdp_use_orig_params: true
+  fsdp_sync_module_states: false        # weights already loaded identically on all ranks
+  fsdp_cpu_ram_efficient_loading: false # (requires sync_module_states; off since we load per-rank)
+  fsdp_activation_checkpointing: false
+downcast_bf16: 'no'
+tpu_use_cluster: false
+tpu_use_sudo: false

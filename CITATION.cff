@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code, please cite the paper."
+title: "Wizard: Manipulate Any World in Real Time via Agentic Control"
+authors:
+  - family-names: Wu
+    given-names: Yuzhe
+  - family-names: Lin
+    given-names: Zijun
+  - family-names: Jin
+    given-names: Yeying
+preferred-citation:
+  type: article
+  title: "Wizard: Manipulate Any World in Real Time via Agentic Control"
+  authors:
+    - family-names: Wu
+      given-names: Yuzhe
+    - family-names: Lin
+      given-names: Zijun
+    - family-names: Jin
+      given-names: Yeying
+  journal: "arXiv preprint arXiv:2610.40339"
+  year: 2026

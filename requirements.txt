@@ -1,0 +1,14 @@
+# torch 2.11 (CUDA 12.8) is installed separately, see README
+accelerate>=1.14
+safetensors>=0.8
+einops>=0.8
+numpy>=2.0
+opencv-python>=4.10
+scipy>=1.14
+Pillow>=10.0
+transformers>=4.45
+ftfy>=6.0
+regex
+bitsandbytes>=0.45      # 8-bit AdamW in the distillation stages
+moderngl>=5.10          # EGL mesh rasterisation for world maintenance
+# optional: sageattention (faster attention kernels)
